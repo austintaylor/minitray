@@ -9,9 +9,10 @@
 /* Begin PBXBuildFile section */
 		D934A8F8198AD14B004047B1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D934A8F7198AD14B004047B1 /* main.swift */; };
 		D934A8FA198AD14B004047B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D934A8F9198AD14B004047B1 /* AppDelegate.swift */; };
-		D934A8FC198AD14B004047B1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D934A8FB198AD14B004047B1 /* Images.xcassets */; };
-		D934A8FF198AD14B004047B1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D934A8FD198AD14B004047B1 /* MainMenu.xib */; };
 		D934A90B198AD14B004047B1 /* MiniTrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D934A90A198AD14B004047B1 /* MiniTrayTests.swift */; };
+		D934A915198AD1DF004047B1 /* MiniTray.swift in Sources */ = {isa = PBXBuildFile; fileRef = D934A914198AD1DF004047B1 /* MiniTray.swift */; };
+		D934A918198AE897004047B1 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D934A917198AE897004047B1 /* IOKit.framework */; };
+		D99A6F41198B3A03000D6F33 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D99A6F40198B3A03000D6F33 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,11 +30,13 @@
 		D934A8F6198AD14B004047B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D934A8F7198AD14B004047B1 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		D934A8F9198AD14B004047B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D934A8FB198AD14B004047B1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		D934A8FE198AD14B004047B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		D934A904198AD14B004047B1 /* MiniTrayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiniTrayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D934A909198AD14B004047B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D934A90A198AD14B004047B1 /* MiniTrayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniTrayTests.swift; sourceTree = "<group>"; };
+		D934A914198AD1DF004047B1 /* MiniTray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniTray.swift; sourceTree = "<group>"; };
+		D934A917198AE897004047B1 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		D99A6F40198B3A03000D6F33 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D99A6F42198BE561000D6F33 /* MiniTray.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MiniTray.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +44,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D99A6F41198B3A03000D6F33 /* CoreLocation.framework in Frameworks */,
+				D934A918198AE897004047B1 /* IOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +62,8 @@
 		D934A8E9198AD14A004047B1 = {
 			isa = PBXGroup;
 			children = (
+				D99A6F40198B3A03000D6F33 /* CoreLocation.framework */,
+				D934A917198AE897004047B1 /* IOKit.framework */,
 				D934A8F4198AD14A004047B1 /* MiniTray */,
 				D934A907198AD14B004047B1 /* MiniTrayTests */,
 				D934A8F3198AD14A004047B1 /* Products */,
@@ -75,10 +82,10 @@
 		D934A8F4198AD14A004047B1 /* MiniTray */ = {
 			isa = PBXGroup;
 			children = (
+				D99A6F42198BE561000D6F33 /* MiniTray.entitlements */,
 				D934A8F9198AD14B004047B1 /* AppDelegate.swift */,
-				D934A8FB198AD14B004047B1 /* Images.xcassets */,
-				D934A8FD198AD14B004047B1 /* MainMenu.xib */,
 				D934A8F5198AD14A004047B1 /* Supporting Files */,
+				D934A914198AD1DF004047B1 /* MiniTray.swift */,
 			);
 			path = MiniTray;
 			sourceTree = "<group>";
@@ -158,6 +165,11 @@
 				TargetAttributes = {
 					D934A8F1198AD14A004047B1 = {
 						CreatedOnToolsVersion = 6.0;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					D934A903198AD14B004047B1 = {
 						CreatedOnToolsVersion = 6.0;
@@ -189,8 +201,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D934A8FC198AD14B004047B1 /* Images.xcassets in Resources */,
-				D934A8FF198AD14B004047B1 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D934A8FA198AD14B004047B1 /* AppDelegate.swift in Sources */,
+				D934A915198AD1DF004047B1 /* MiniTray.swift in Sources */,
 				D934A8F8198AD14B004047B1 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,17 +241,6 @@
 			targetProxy = D934A905198AD14B004047B1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		D934A8FD198AD14B004047B1 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D934A8FE198AD14B004047B1 /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D934A90C198AD14B004047B1 /* Debug */ = {
@@ -324,6 +324,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MiniTray/MiniTray.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = MiniTray/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -335,6 +336,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MiniTray/MiniTray.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = MiniTray/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -397,6 +399,7 @@
 				D934A910198AD14B004047B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D934A911198AD14B004047B1 /* Build configuration list for PBXNativeTarget "MiniTrayTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +408,7 @@
 				D934A913198AD14B004047B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
